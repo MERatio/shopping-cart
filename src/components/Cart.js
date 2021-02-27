@@ -1,8 +1,8 @@
 function Cart() {
 	return (
-		<div>
+		<section>
 			<h1>Cart</h1>
-		</div>
+		</section>
 	);
 }
 

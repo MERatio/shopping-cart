@@ -7,7 +7,7 @@ function Product({ products }) {
 	const product = products.find((product) => product.id === intProductId);
 
 	return (
-		<div className="row justify-content-center">
+		<section className="row justify-content-center">
 			<div className="col-10 container">
 				<div className="row">
 					<div className="col-4">
@@ -25,7 +25,7 @@ function Product({ products }) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
 
