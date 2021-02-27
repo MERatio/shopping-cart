@@ -22,7 +22,7 @@ function App() {
 	return (
 		<Router>
 			<Navbar />
-			<main>
+			<main className="container">
 				<Switch>
 					<Route exact path="/">
 						<Homepage />

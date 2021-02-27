@@ -5,14 +5,18 @@ function LinkCard({ item }) {
 	const { url } = useRouteMatch();
 
 	return (
-		<div className="LinkCard">
+		<div className="card LinkCard">
 			<Link to={`${url}/${item.id}`}>
 				<span className="link-spanner"></span>
 			</Link>
-			<img src={item.image} alt={item.title} />
-			<div>
-				<p>{item.title}</p>
-				<p>{item.price}</p>
+			<img
+				src={item.image}
+				alt={item.title}
+				className="card-img-top mx-auto LinkCard-img"
+			/>
+			<div className="card-body">
+				<p className="card-title">{item.title}</p>
+				<p className="card-text font-weight-bold carrot">{`$${item.price}`}</p>
 			</div>
 		</div>
 	);

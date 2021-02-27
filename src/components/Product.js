@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import '../css/Product.css';
 
 function Product({ products }) {
 	const { productId } = useParams();
@@ -6,11 +7,23 @@ function Product({ products }) {
 	const product = products.find((product) => product.id === intProductId);
 
 	return (
-		<div>
-			<img src={product.image} alt={product.title} />
-			<div>
-				<p>{product.title}</p>
-				<p>{product.price}</p>
+		<div className="row justify-content-center">
+			<div className="col-10 container">
+				<div className="row">
+					<div className="col-4">
+						<img
+							src={product.image}
+							alt={product.title}
+							className="Product-img"
+						/>
+					</div>
+					<div className="col-8">
+						<div>
+							<h1>{product.title}</h1>
+							<p className="carrot h2 font-weight-bold">{`$${product.price}`}</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
