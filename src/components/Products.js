@@ -1,19 +1,18 @@
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Product from './Product';
+import LinkCards from './LinkCards';
 
-function Products() {
-	const { path, url } = useRouteMatch();
-	const dummyProductId = `${Math.floor(Math.random() * 10) + 1}`;
+function Products({ products }) {
+	const { path } = useRouteMatch();
 
 	return (
 		<div>
 			<Switch>
 				<Route exact path={path}>
-					<h1>Products</h1>
-					<Link to={`${url}/${dummyProductId}`}>Product {dummyProductId}</Link>
+					<LinkCards items={products} />
 				</Route>
 				<Route exact path={`${path}/:productId`}>
-					<Product />
+					{products.length && <Product products={products} />}
 				</Route>
 			</Switch>
 		</div>
