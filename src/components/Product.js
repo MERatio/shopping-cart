@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import ProductForm from './ProductForm';
 import '../css/Product.css';
 
 function Product({ products }) {
@@ -21,6 +22,9 @@ function Product({ products }) {
 						<div>
 							<h1>{product.title}</h1>
 							<p className="carrot h2 font-weight-bold">{`$${product.price}`}</p>
+						</div>
+						<div className="mt-4">
+							<ProductForm />
 						</div>
 					</div>
 				</div>
