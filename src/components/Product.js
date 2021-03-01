@@ -8,7 +8,7 @@ function Product({ products }) {
 
 	return (
 		<section className="row justify-content-center">
-			<div className="col-10">
+			<div className="col-sm-10">
 				<div className="row">
 					<div className="col-lg-4 text-center">
 						<img
