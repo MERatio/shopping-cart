@@ -10,14 +10,14 @@ function Product({ products }) {
 		<section className="row justify-content-center">
 			<div className="col-10 container">
 				<div className="row">
-					<div className="col-4">
+					<div className="col-lg-4 text-center">
 						<img
 							src={product.image}
 							alt={product.title}
 							className="Product-img"
 						/>
 					</div>
-					<div className="col-8">
+					<div className="col-lg-8">
 						<div>
 							<h1>{product.title}</h1>
 							<p className="carrot h2 font-weight-bold">{`$${product.price}`}</p>
