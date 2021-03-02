@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Homepage from './components/Homepage';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import './App.css';
@@ -25,7 +29,7 @@ function App() {
 			<main className="container">
 				<Switch>
 					<Route exact path="/">
-						<Homepage />
+						<Redirect to="products" />
 					</Route>
 					<Route path="/products">
 						<Products products={products} />
