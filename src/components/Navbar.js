@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import CartLink from './CartLink';
 
-function Navbar() {
+function Navbar({ cartLength }) {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-4">
 			<NavLink to="/" className="navbar-brand">
@@ -31,7 +31,7 @@ function Navbar() {
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<CartLink />
+						<CartLink cartLength={cartLength} />
 					</li>
 				</ul>
 			</div>

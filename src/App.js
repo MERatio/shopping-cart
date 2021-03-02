@@ -48,7 +48,7 @@ function App() {
 
 	return (
 		<Router>
-			<Navbar />
+			<Navbar cartLength={cart.length} />
 			<main className="container">
 				<Switch>
 					<Route exact path="/">
