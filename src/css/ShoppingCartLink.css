@@ -1,0 +1,11 @@
+.ShoppingCartLink {
+	position: relative;
+}
+
+.shopping-cart-items-number {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	font-size: 1.2em;
+	color: var(--light);
+}
