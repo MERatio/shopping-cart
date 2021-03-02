@@ -7,7 +7,7 @@ function CartLink() {
 	return (
 		<NavLink exact to="/cart" className="nav-link CartLink">
 			<FontAwesomeIcon icon={faShoppingCart} size="3x" className="carrot" />
-			<span className="cart-items-number">0</span>
+			<span className="cart-products-number">0</span>
 		</NavLink>
 	);
 }
