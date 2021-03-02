@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import AddToCartForm from './AddToCartForm';
 import '../css/Product.css';
 
-function Product({ products }) {
+function Product({ products, onAddToCartSubmit }) {
 	const { productId } = useParams();
 	const intProductId = parseInt(productId, 10);
 	const product = products.find((product) => product.id === intProductId);
@@ -24,7 +24,10 @@ function Product({ products }) {
 							<p className="carrot h2 font-weight-bold">{`$${product.price}`}</p>
 						</div>
 						<div className="mt-4">
-							<AddToCartForm />
+							<AddToCartForm
+								productId={product.id}
+								onSubmit={onAddToCartSubmit}
+							/>
 						</div>
 					</div>
 				</div>

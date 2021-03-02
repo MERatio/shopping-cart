@@ -2,7 +2,7 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Product from './Product';
 import LinkCards from './LinkCards';
 
-function Products({ products }) {
+function Products({ products, onAddToCartSubmit }) {
 	const { path } = useRouteMatch();
 
 	return (
@@ -11,7 +11,9 @@ function Products({ products }) {
 				<LinkCards items={products} />
 			</Route>
 			<Route exact path={`${path}/:productId`}>
-				{products.length && <Product products={products} />}
+				{products.length && (
+					<Product products={products} onAddToCartSubmit={onAddToCartSubmit} />
+				)}
 			</Route>
 		</Switch>
 	);

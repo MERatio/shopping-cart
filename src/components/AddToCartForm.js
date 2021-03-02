@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../css/AddToCartForm.css';
 
-function AddToCartForm() {
+function AddToCartForm({ productId, onSubmit }) {
 	const [state, setState] = useState({ quantity: 1 });
 
 	function handleInputChange(e) {
@@ -12,8 +12,13 @@ function AddToCartForm() {
 		setState({ [name]: value });
 	}
 
+	function handleSubmit(e) {
+		e.preventDefault();
+		onSubmit(productId, parseInt(state.quantity, 10));
+	}
+
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<div className="form-group d-flex align-items-center">
 				<label htmlFor="quantity" className="mb-0">
 					Quantity
