@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../css/AddToCartForm.css';
+import QuantityGroup from './QuantityGroup';
 
 function AddToCartForm({ productId, onSubmit }) {
 	const [state, setState] = useState({ quantity: 1 });
@@ -19,22 +19,7 @@ function AddToCartForm({ productId, onSubmit }) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<div className="form-group d-flex align-items-center">
-				<label htmlFor="quantity" className="mb-0">
-					Quantity
-				</label>
-				<input
-					type="number"
-					className="form-control ml-3 AddToCartForm-quantity"
-					id="quantity"
-					name="quantity"
-					value={state.quantity}
-					min="1"
-					step="1"
-					required
-					onChange={handleInputChange}
-				/>
-			</div>
+			<QuantityGroup value={state.quantity} onInputChange={handleInputChange} />
 			<button className="btn btn-success">Add To Cart</button>
 		</form>
 	);
