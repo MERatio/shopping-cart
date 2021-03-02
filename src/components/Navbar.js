@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import ShoppingCartLink from './ShoppingCartLink';
+import CartLink from './CartLink';
 
 function Navbar() {
 	return (
@@ -31,7 +31,7 @@ function Navbar() {
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<ShoppingCartLink />
+						<CartLink />
 					</li>
 				</ul>
 			</div>

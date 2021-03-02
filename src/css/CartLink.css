@@ -1,8 +1,8 @@
-.ShoppingCartLink {
+.CartLink {
 	position: relative;
 }
 
-.shopping-cart-items-number {
+.cart-items-number {
 	position: absolute;
 	top: 20%;
 	left: 50%;
