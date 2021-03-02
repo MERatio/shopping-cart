@@ -1,6 +1,6 @@
-import '../css/ProductForm.css';
+import '../css/AddToCartForm.css';
 
-function ProductForm() {
+function AddToCartForm() {
 	return (
 		<form>
 			<div className="form-group d-flex align-items-center">
@@ -9,7 +9,7 @@ function ProductForm() {
 				</label>
 				<input
 					type="number"
-					className="form-control ml-3 ProductForm-quantity"
+					className="form-control ml-3 AddToCartForm-quantity"
 					id="quantity"
 					value="1"
 					min="1"
@@ -17,8 +17,9 @@ function ProductForm() {
 					required
 				/>
 			</div>
+			<button className="btn btn-success">Add To Cart</button>
 		</form>
 	);
 }
 
-export default ProductForm;
+export default AddToCartForm;
