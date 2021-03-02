@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
 	const [products, setProducts] = useState([]);
-	const [cart, setCart] = useState([]);
+	const [cartItems, setCartItems] = useState([]);
 
 	async function fetchAndSetProducts() {
 		const response = await fetch('https://fakestoreapi.com/products?limit=20');
@@ -21,23 +21,23 @@ function App() {
 	}
 
 	function handleAddToCartSubmit(productId, quantity) {
-		setCart((prevCart) => {
-			const productInCart = prevCart.find((product) => {
-				return product.productId === productId;
+		setCartItems((prevCartItems) => {
+			const productInCart = prevCartItems.find((prevCartItem) => {
+				return prevCartItem.productId === productId;
 			});
 			if (productInCart) {
-				return prevCart.map((product) => {
-					if (product.productId !== productId) {
-						return product;
+				return prevCartItems.map((prevCartItem) => {
+					if (prevCartItem.productId !== productId) {
+						return prevCartItem;
 					} else {
 						return {
-							...product,
-							quantity: product.quantity + quantity,
+							...prevCartItem,
+							quantity: prevCartItem.quantity + quantity,
 						};
 					}
 				});
 			} else {
-				return [...prevCart, { productId, quantity }];
+				return [...prevCartItems, { productId, quantity }];
 			}
 		});
 	}
@@ -48,7 +48,7 @@ function App() {
 
 	return (
 		<Router>
-			<Navbar cartLength={cart.length} />
+			<Navbar cartItemsLength={cartItems.length} />
 			<main className="container">
 				<Switch>
 					<Route exact path="/">
