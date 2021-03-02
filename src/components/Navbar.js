@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import ShoppingCartLink from './ShoppingCartLink';
 
 function Navbar() {
 	return (
@@ -18,26 +19,19 @@ function Navbar() {
 				<span className="navbar-toggler-icon"></span>
 			</button>
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul className="navbar-nav ml-auto">
+				<ul className="navbar-nav ml-auto d-flex align-items-center">
 					<li className="nav-item">
 						<NavLink
 							exact
 							to="/products"
-							className="nav-link"
+							className="nav-link h5"
 							activeClassName="active"
 						>
 							Products
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<NavLink
-							exact
-							to="/cart"
-							className="nav-link"
-							activeClassName="active"
-						>
-							Cart
-						</NavLink>
+						<ShoppingCartLink />
 					</li>
 				</ul>
 			</div>
