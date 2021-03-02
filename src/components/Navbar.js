@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+		<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-4">
 			<NavLink to="/" className="navbar-brand">
 				Shopping Cart
 			</NavLink>
