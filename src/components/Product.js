@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ProductForm from './ProductForm';
+import AddToCartBtn from './AddToCartBtn';
 import '../css/Product.css';
 
 function Product({ products }) {
@@ -25,6 +26,9 @@ function Product({ products }) {
 						</div>
 						<div className="mt-4">
 							<ProductForm />
+						</div>
+						<div className="mt-4">
+							<AddToCartBtn />
 						</div>
 					</div>
 				</div>
