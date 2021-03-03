@@ -8,16 +8,19 @@ import {
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import Cart from './components/Cart';
+import SKGrid from './components/SKGrid';
 import './App.css';
 
 function App() {
 	const [products, setProducts] = useState([]);
+	const [isProductsReady, setIsProductsReady] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
 
 	async function fetchAndSetProducts() {
 		const response = await fetch('https://fakestoreapi.com/products?limit=20');
 		const products = await response.json();
 		setProducts(products);
+		setIsProductsReady(true);
 	}
 
 	function handleAddToCartSubmit(productId, quantity) {
@@ -82,24 +85,28 @@ function App() {
 		<Router>
 			<Navbar cartItemsLength={cartItems.length} />
 			<main className="container">
-				<Switch>
-					<Route exact path="/">
-						<Redirect to="products" />
-					</Route>
-					<Route path="/products">
-						<Products
-							products={products}
-							onAddToCartSubmit={handleAddToCartSubmit}
-						/>
-					</Route>
-					<Route exact path="/cart">
-						<Cart
-							mappedCartItems={mapCartItems(products, cartItems)}
-							onQuantityInputChange={handleQuantityInputChange}
-							onCartItemDelete={handleCartItemDelete}
-						/>
-					</Route>
-				</Switch>
+				{isProductsReady ? (
+					<Switch>
+						<Route exact path="/">
+							<Redirect to="products" />
+						</Route>
+						<Route path="/products">
+							<Products
+								products={products}
+								onAddToCartSubmit={handleAddToCartSubmit}
+							/>
+						</Route>
+						<Route exact path="/cart">
+							<Cart
+								mappedCartItems={mapCartItems(products, cartItems)}
+								onQuantityInputChange={handleQuantityInputChange}
+								onCartItemDelete={handleCartItemDelete}
+							/>
+						</Route>
+					</Switch>
+				) : (
+					<SKGrid />
+				)}
 			</main>
 		</Router>
 	);
