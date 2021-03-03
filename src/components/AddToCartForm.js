@@ -5,7 +5,6 @@ function AddToCartForm({ productId, onSubmit }) {
 	const [state, setState] = useState({ quantity: 1 });
 
 	function handleInputChange(e) {
-		e.preventDefault();
 		const target = e.target;
 		const name = target.name;
 		const value = target.value;
