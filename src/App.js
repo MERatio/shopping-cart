@@ -77,11 +77,19 @@ function App() {
 	}
 
 	useEffect(() => {
+		console.log(
+			process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL
+		);
+
 		fetchAndSetProducts();
 	}, []);
 
 	return (
-		<Router>
+		<Router
+			basename={
+				process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL
+			}
+		>
 			<Navbar cartItemsLength={cartItems.length} />
 			<main className="container">
 				{isProductsReady ? (
