@@ -44,7 +44,7 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 							</div>
 							<div className="col-md-3 d-flex justify-content-center">
 								<QuantityGroup
-									value={mappedCartItem.quantity}
+									value={String(mappedCartItem.quantity)}
 									onInputChange={(e) =>
 										onQuantityInputChange(
 											mappedCartItem.product.id,
