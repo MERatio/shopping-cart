@@ -5,6 +5,12 @@ import QuantityGroup from './QuantityGroup';
 import '../css/Cart.css';
 
 function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
+	const subTotal = mappedCartItems.reduce(
+		(sum, mappedCartItem) =>
+			sum + mappedCartItem.product.price * mappedCartItem.quantity,
+		0
+	);
+
 	return (
 		<section className="row justify-content-center">
 			<div className="col-sm-10">
@@ -55,6 +61,16 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 							</div>
 						</div>
 					))
+				)}
+				{mappedCartItems.length > 0 && (
+					<div className="row d-flex justify-content-end">
+						<p className="h4">
+							Subtotal:{' '}
+							<span className="font-weight-bold carrot">
+								${(Math.round(subTotal * 100) / 100).toFixed(2)}
+							</span>
+						</p>
+					</div>
 				)}
 			</div>
 		</section>
