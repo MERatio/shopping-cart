@@ -3,7 +3,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import QuantityGroup from './QuantityGroup';
 import '../css/Cart.css';
 
-function Cart({ mappedCartItems }) {
+function Cart({ mappedCartItems, onQuantityInputChange }) {
 	return (
 		<section className="row justify-content-center">
 			<div className="col-sm-10">
@@ -29,7 +29,15 @@ function Cart({ mappedCartItems }) {
 							</button>
 						</div>
 						<div className="col-md-3 d-flex justify-content-center">
-							<QuantityGroup value={mappedCartItem.quantity} />
+							<QuantityGroup
+								value={mappedCartItem.quantity}
+								onInputChange={(e) =>
+									onQuantityInputChange(
+										mappedCartItem.product.id,
+										parseInt(e.target.value, 10)
+									)
+								}
+							/>
 						</div>
 					</div>
 				))}

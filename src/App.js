@@ -42,6 +42,21 @@ function App() {
 		});
 	}
 
+	function handleQuantityInputChange(productId, quantity) {
+		setCartItems((prevCartItems) => {
+			return prevCartItems.map((prevCartItem) => {
+				if (prevCartItem.productId !== productId) {
+					return prevCartItem;
+				} else {
+					return {
+						...prevCartItem,
+						quantity,
+					};
+				}
+			});
+		});
+	}
+
 	function mapCartItems(products, cartItems) {
 		return cartItems.map((cartItem) => {
 			return {
@@ -70,7 +85,10 @@ function App() {
 						/>
 					</Route>
 					<Route exact path="/cart">
-						<Cart mappedCartItems={mapCartItems(products, cartItems)} />
+						<Cart
+							mappedCartItems={mapCartItems(products, cartItems)}
+							onQuantityInputChange={handleQuantityInputChange}
+						/>
 					</Route>
 				</Switch>
 			</main>
