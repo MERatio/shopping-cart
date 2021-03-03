@@ -81,11 +81,7 @@ function App() {
 	}, []);
 
 	return (
-		<Router
-			basename={
-				process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL
-			}
-		>
+		<Router basename={process.env.PUBLIC_URL}>
 			<Navbar cartItemsLength={cartItems.length} />
 			<main className="container">
 				{isProductsReady ? (
