@@ -45,7 +45,7 @@ function App() {
 		});
 	}
 
-	function handleQuantityInputChange(productId, quantity) {
+	function handleQuantityInputChange(productId, value) {
 		setCartItems((prevCartItems) => {
 			return prevCartItems.map((prevCartItem) => {
 				if (prevCartItem.productId !== productId) {
@@ -53,7 +53,7 @@ function App() {
 				} else {
 					return {
 						...prevCartItem,
-						quantity,
+						quantity: parseInt(value, 10),
 					};
 				}
 			});

@@ -48,7 +48,7 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 									onInputChange={(e) =>
 										onQuantityInputChange(
 											mappedCartItem.product.id,
-											parseInt(e.target.value, 10)
+											e.target.value
 										)
 									}
 								/>
