@@ -27,7 +27,7 @@ function AddToCartForm({ productId, onSubmit }) {
 	return (
 		<form onSubmit={handleSubmit}>
 			<QuantityGroup value={state.quantity} onInputChange={handleInputChange} />
-			<button className="btn btn-success">Add To Cart</button>
+			<button className="btn btn-primary">Add To Cart</button>
 		</form>
 	);
 }

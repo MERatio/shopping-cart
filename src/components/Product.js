@@ -21,7 +21,7 @@ function Product({ products, onAddToCartSubmit }) {
 					<div className="col-lg-8">
 						<div>
 							<h1>{product.title}</h1>
-							<p className="carrot h2 font-weight-bold">{`$${product.price}`}</p>
+							<p className="text-primary h2 font-weight-bold">{`$${product.price}`}</p>
 						</div>
 						<div className="mt-4">
 							<AddToCartForm

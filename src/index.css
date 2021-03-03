@@ -1,11 +1,3 @@
-:root {
-	--carrot: #e67e22;
-}
-
-.carrot {
-	color: var(--carrot);
-}
-
 .cursor-pointer {
 	cursor: pointer;
 }

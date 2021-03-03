@@ -6,8 +6,8 @@ import '../css/CartLink.css';
 function CartLink({ cartItemsLength }) {
 	return (
 		<NavLink exact to="/cart" className="nav-link CartLink">
-			<FontAwesomeIcon icon={faShoppingCart} size="3x" className="carrot" />
-			<span className="cart-items-number">{cartItemsLength}</span>
+			<FontAwesomeIcon icon={faShoppingCart} size="3x" />
+			<span className="cart-items-number text-dark">{cartItemsLength}</span>
 		</NavLink>
 	);
 }

@@ -39,7 +39,7 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 								</p>
 							</div>
 							<div className="col-md-2 mb-2">
-								<p className="carrot font-weight-bold mb-1">{`$${mappedCartItem.product.price}`}</p>
+								<p className="text-primary font-weight-bold mb-1">{`$${mappedCartItem.product.price}`}</p>
 								<button
 									type="button"
 									className="btn btn-danger"
@@ -66,7 +66,7 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 					<div className="row d-flex justify-content-end">
 						<p className="h4">
 							Subtotal:{' '}
-							<span className="font-weight-bold carrot">
+							<span className="font-weight-bold text-primary">
 								${(Math.round(subTotal * 100) / 100).toFixed(2)}
 							</span>
 						</p>

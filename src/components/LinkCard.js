@@ -16,7 +16,7 @@ function LinkCard({ item }) {
 			/>
 			<div className="card-body">
 				<p className="card-title">{item.title}</p>
-				<p className="card-text font-weight-bold carrot">{`$${item.price}`}</p>
+				<p className="card-text font-weight-bold text-primary">{`$${item.price}`}</p>
 			</div>
 		</div>
 	);

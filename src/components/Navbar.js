@@ -3,7 +3,7 @@ import CartLink from './CartLink';
 
 function Navbar({ cartItemsLength }) {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-4">
+		<nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top mb-4">
 			<NavLink to="/" className="navbar-brand">
 				Shopping Cart
 			</NavLink>
