@@ -42,6 +42,15 @@ function App() {
 		});
 	}
 
+	function mapCartItems(products, cartItems) {
+		return cartItems.map((cartItem) => {
+			return {
+				product: products.find((product) => product.id === cartItem.productId),
+				quantity: cartItem.quantity,
+			};
+		});
+	}
+
 	useEffect(() => {
 		fetchAndSetProducts();
 	}, []);
@@ -61,7 +70,7 @@ function App() {
 						/>
 					</Route>
 					<Route exact path="/cart">
-						<Cart />
+						<Cart mappedCartItems={mapCartItems(products, cartItems)} />
 					</Route>
 				</Switch>
 			</main>

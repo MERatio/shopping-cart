@@ -6,6 +6,10 @@
 	color: var(--carrot);
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
 .link-spanner {
 	position: absolute;
 	width: 100%;
