@@ -77,10 +77,6 @@ function App() {
 	}
 
 	useEffect(() => {
-		console.log(
-			process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL
-		);
-
 		fetchAndSetProducts();
 	}, []);
 
