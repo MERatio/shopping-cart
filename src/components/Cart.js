@@ -5,11 +5,13 @@ import QuantityGroup from './QuantityGroup';
 import '../css/Cart.css';
 
 function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
-	const subTotal = mappedCartItems.reduce(
-		(sum, mappedCartItem) =>
-			sum + mappedCartItem.product.price * mappedCartItem.quantity,
-		0
-	);
+	const subTotal = mappedCartItems.reduce((sum, mappedCartItem) => {
+		let quantity = mappedCartItem.quantity;
+		if (isNaN(quantity)) {
+			quantity = 1;
+		}
+		return sum + mappedCartItem.product.price * quantity;
+	}, 0);
 
 	return (
 		<section className="row justify-content-center">
