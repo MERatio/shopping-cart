@@ -8,7 +8,6 @@ function AddToCartForm({ productId, onSubmit }) {
 		const target = e.target;
 		const name = target.name;
 		const value = target.value;
-		const positiveIntegers = ['quantity'];
 		setState({ [name]: value });
 	}
 
