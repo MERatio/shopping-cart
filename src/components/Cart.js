@@ -3,7 +3,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import QuantityGroup from './QuantityGroup';
 import '../css/Cart.css';
 
-function Cart({ mappedCartItems, onQuantityInputChange }) {
+function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 	return (
 		<section className="row justify-content-center">
 			<div className="col-sm-10">
@@ -24,7 +24,11 @@ function Cart({ mappedCartItems, onQuantityInputChange }) {
 						</div>
 						<div className="col-md-2 mb-2">
 							<p className="carrot font-weight-bold mb-1">{`$${mappedCartItem.product.price}`}</p>
-							<button type="button" className="btn btn-danger">
+							<button
+								type="button"
+								className="btn btn-danger"
+								onClick={(e) => onCartItemDelete(mappedCartItem.product.id)}
+							>
 								<FontAwesomeIcon icon={faTrash} />
 							</button>
 						</div>

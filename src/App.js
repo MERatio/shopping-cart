@@ -57,6 +57,14 @@ function App() {
 		});
 	}
 
+	function handleCartItemDelete(productId) {
+		setCartItems((prevCartItems) => {
+			return prevCartItems.filter((prevCartItem) => {
+				return prevCartItem.productId !== productId;
+			});
+		});
+	}
+
 	function mapCartItems(products, cartItems) {
 		return cartItems.map((cartItem) => {
 			return {
@@ -88,6 +96,7 @@ function App() {
 						<Cart
 							mappedCartItems={mapCartItems(products, cartItems)}
 							onQuantityInputChange={handleQuantityInputChange}
+							onCartItemDelete={handleCartItemDelete}
 						/>
 					</Route>
 				</Switch>
