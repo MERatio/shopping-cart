@@ -5,7 +5,7 @@ import QuantityGroup from './QuantityGroup';
 import '../css/Cart.css';
 
 function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
-	const subTotal = mappedCartItems.reduce((sum, mappedCartItem) => {
+	const subtotal = mappedCartItems.reduce((sum, mappedCartItem) => {
 		let quantity = mappedCartItem.quantity;
 		if (isNaN(quantity)) {
 			quantity = 1;
@@ -69,7 +69,7 @@ function Cart({ mappedCartItems, onQuantityInputChange, onCartItemDelete }) {
 						<p className="h4">
 							Subtotal:{' '}
 							<span className="font-weight-bold text-primary">
-								${(Math.round(subTotal * 100) / 100).toFixed(2)}
+								${(Math.round(subtotal * 100) / 100).toFixed(2)}
 							</span>
 						</p>
 					</div>
