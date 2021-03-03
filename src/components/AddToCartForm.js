@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isPositiveInteger } from '../lib/helpers';
 import QuantityGroup from './QuantityGroup';
 
 function AddToCartForm({ productId, onSubmit }) {
@@ -8,7 +9,14 @@ function AddToCartForm({ productId, onSubmit }) {
 		const target = e.target;
 		const name = target.name;
 		const value = target.value;
-		setState({ [name]: value });
+		const positiveIntegers = ['quantity'];
+		setState({
+			[name]: positiveIntegers.includes(name)
+				? isPositiveInteger(value)
+					? value
+					: '1'
+				: value,
+		});
 	}
 
 	function handleSubmit(e) {

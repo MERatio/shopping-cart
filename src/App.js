@@ -5,6 +5,7 @@ import {
 	Route,
 	Redirect,
 } from 'react-router-dom';
+import { isPositiveInteger } from './lib/helpers';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import Cart from './components/Cart';
@@ -53,7 +54,7 @@ function App() {
 				} else {
 					return {
 						...prevCartItem,
-						quantity: parseInt(value, 10),
+						quantity: isPositiveInteger(value) ? parseInt(value, 10) : 1,
 					};
 				}
 			});
